@@ -64,19 +64,19 @@ print("\n                                                      Criado por: Gabri
 print("                                                      Contato: https://github.com/Gamapinha4 \n \n")  
 
                       
-print("  ╱ ╲     __  __   ___    ___     _       ")
-print("╱     ╲  |  \/  | | __|  / __|   / \    ")
-print("╲     ╱  | |\/| | | _|  | (__   / ᐱ \   ")
-print("  ╲ ╱    |_|  |_| |___|  \___| /_/ \_\ Engenharia")
+print(" ╱╲      __  __   ___    ___     _       ")
+print("╱  ╲    |  \/  | | __|  / __|   / \    ")
+print("╲  ╱    | |\/| | | _|  | (__   / ᐱ \   ")
+print(" ╲╱     |_|  |_| |___|  \___| /_/ \_\ Engenharia")
 print("")
 print("╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
-print("║    IMPORTANTE:                                                                                                    ║░")
-print("║    ◦ Para que funcione corretamente, a base de arquivos deve seguir o padrão especificado no documento a seguir:  ║░")
-print("║                                                                                                                   ║░")
-print("║    https://drive.google.com/file/d/1khpeWpJX23K_hiRf8nay4L_ECBcTcZLG/view?usp=sharing                             ║░")
-print("║                                                                                                                   ║░")
-print("╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝░")
-print("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+print("║    IMPORTANTE:                                                                                                    ║▓")
+print("║    ◦ Para que funcione corretamente, a base de arquivos deve seguir o padrão especificado no documento a seguir:  ║▓")
+print("║                                                                                                                   ║▓")
+print("║    https://drive.google.com/file/d/1khpeWpJX23K_hiRf8nay4L_ECBcTcZLG/view?usp=sharing                             ║▓")
+print("║                                                                                                                   ║▓")
+print("╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝▓")
+print("  ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓")
 
 caminho = input('\n \n [CAMINHO] =>  INFORME O CAMINHO DA PASTA: \nR:') 
 
@@ -85,6 +85,9 @@ pastas = getFolders(caminho)
 for pasta in pastas:
     caminho_completo = os.path.join(caminho, pasta)
     itens = getItens(caminho_completo)
+
+if pastas is None:
+    input('[ERRO] => Pasta não encontrada, pressione qualquer tecla para continuar.')
 
 if pastas is not None:
     print("")
@@ -114,7 +117,7 @@ print("############################################################## \n \n")
 
 response = input("[INFO] => Deseja salvar em um arquivo txt? (Sim ou Nao) \nR:")
 
-if response == "Sim":
+if response == "Sim" or response == "sim" or response == "s":
     NDN = input("Digite o nome do arquivo... (NÃO COLOCAR FORMATOS COMO .TXT) \nR:")
     save_file(NDN, mont_size)
     print("\n [SUCESSO] => O Arquivo foi criado com sucesso. \n")
