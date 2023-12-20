@@ -9,7 +9,7 @@ mont_size = list()
 def getItens(src):
     for root, dirs, files in os.walk(src, topdown=False):
       for indice, name in enumerate(files, start=1):
-          if name.endswith(".txt"):
+          if name.endswith(".SLDPRT"):
               
             nomeArquivoAntigo = str(root.split('_')[1][0] + root.split('_')[2][0])
             resultado = ''.join(x for x in src if x.isdigit()).zfill(2)
@@ -17,7 +17,7 @@ def getItens(src):
             pathNew = nomeArquivoAntigo + "." + resultado + "." + str(os.path.dirname(os.path.join(root,name)).split("\\")[::-1][0].split("_")[1]).zfill(2)  + "." + str(indice).zfill(2)
             text = pathNew + '  -  ' + str(os.path.join(root, name).split('\\')[::-1][0]) + '\n'
             
-            if not name.startswith('subm_') & name.endswith('.txt'):
+            if not name.startswith('subm_') & name.endswith('.SLDPRT'):
               mont_size.append(text)
 
 def save_file(NDN, text):
@@ -25,7 +25,7 @@ def save_file(NDN, text):
     count = "01"
     f = open(NDN + '.txt', "w")
 
-    f.write("Esse arquivo foi criado usando o NOMECLIFY! \n Criado por: Gabriel Palmieri \n \n \n \n")
+    f.write("Esse arquivo foi criado usando o NAMECLIFY! \n Criado por: Gabriel Palmieri \n \n \n \n")
 
     f.write('')
     f.write(' * Itens refentes a montagem 01 \n \n')
@@ -54,21 +54,31 @@ def getFolders(caminho):
         print(f"Ocorreu um erro: {e}")
         return None
     
-print(' ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄ ')
-print('▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌')
-print('▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌   ▐░▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌           ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌')
-print('▐░▌▐░▌    ▐░▌▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌          ▐░▌       ▐░▌')
-print('▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌▐░▌ ▐░▐░▌ ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌          ▐░▌               ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌')
-print('▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌          ▐░▌               ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌')
-print('▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌▐░▌   ▀   ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌          ▐░▌               ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀█░█▀▀▀▀ ')
-print('▐░▌    ▐░▌▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌               ▐░▌     ')
-print('▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄█░█▄▄▄▄ ▐░▌               ▐░▌     ')
-print('▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌               ▐░▌     ')
-print(' ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀                 ▀      ')
-print("\n Criado por: Gabriel Palmieri \n \n")                                                                                                 
+print("  _   _              __  __   ______    _____   _        _____   ______  __     __")
+print(" | \ | |     /\     |  \/  | |  ____|  / ____| | |      |_   _| |  ____| \ \   / /")
+print(" |  \| |    /  \    | \  / | | |__    | |      | |        | |   | |__     \ \_/ / ")
+print(" | . ` |   / /\ \   | |\/| | |  __|   | |      | |        | |   |  __|     \   /  ")
+print(" | |\  |  / ____ \  | |  | | | |____  | |____  | |____   _| |_  | |         | |   ")
+print(" |_| \_| /_/    \_\ |_|  |_| |______|  \_____| |______| |_____| |_|         |_|   ")                                                                                 
+print("\n                                                      Criado por: Gabriel Palmieri")  
+print("                                                      Contato: https://github.com/Gamapinha4 \n \n")  
 
-print("\nIMPORTANTE! => A PRIMEIRA PASTA PRECISA ESTAR DE ACORDO COM SINTAXE SUGERIDA: (NOMEDAEMPRESA_PRIMEIRONOME_SEGUNDONOME) \n NÃO COLOQUE ESPAÇO \n\n")
-caminho = input('[CAMINHO] =>  INFORME O CAMINHO DA PASTA: \nR:') 
+                      
+print("  ╱ ╲     __  __   ___    ___     _       ")
+print("╱     ╲  |  \/  | | __|  / __|   / \    ")
+print("╲     ╱  | |\/| | | _|  | (__   / ᐱ \   ")
+print("  ╲ ╱    |_|  |_| |___|  \___| /_/ \_\ Engenharia")
+print("")
+print("╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗")
+print("║    IMPORTANTE:                                                                                                    ║░")
+print("║    ◦ Para que funcione corretamente, a base de arquivos deve seguir o padrão especificado no documento a seguir:  ║░")
+print("║                                                                                                                   ║░")
+print("║    https://drive.google.com/file/d/1khpeWpJX23K_hiRf8nay4L_ECBcTcZLG/view?usp=sharing                             ║░")
+print("║                                                                                                                   ║░")
+print("╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝░")
+print("  ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░")
+
+caminho = input('\n \n [CAMINHO] =>  INFORME O CAMINHO DA PASTA: \nR:') 
 
 pastas = getFolders(caminho)
 
