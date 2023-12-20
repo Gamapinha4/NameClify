@@ -1,0 +1,115 @@
+import os;
+import re
+
+print(chr(27) + "[2J")
+
+directory_list = list()
+mont_size = list()
+
+def getItens(src):
+    for root, dirs, files in os.walk(src, topdown=False):
+      for indice, name in enumerate(files, start=1):
+          if name.endswith(".txt"):
+              
+            nomeArquivoAntigo = str(root.split('_')[1][0] + root.split('_')[2][0])
+            resultado = ''.join(x for x in src if x.isdigit()).zfill(2)
+            
+            pathNew = nomeArquivoAntigo + "." + resultado + "." + str(os.path.dirname(os.path.join(root,name)).split("\\")[::-1][0].split("_")[1]).zfill(2)  + "." + str(indice).zfill(2)
+            text = pathNew + '  -  ' + str(os.path.join(root, name).split('\\')[::-1][0]) + '\n'
+            
+            if not name.startswith('subm_') & name.endswith('.txt'):
+              mont_size.append(text)
+
+def save_file(NDN, text):
+
+    count = "01"
+    f = open(NDN + '.txt', "w")
+
+    f.write("Esse arquivo foi criado usando o NOMECLIFY! \n Criado por: Gabriel Palmieri \n \n \n \n")
+
+    f.write('')
+    f.write(' * Itens refentes a montagem 01 \n \n')
+
+    for itens in text:
+        if (itens.split('  -  ')[0].split('.')[1] != count):
+            count = str(int(count) + 1).zfill(2)
+            f.write('\n \n')
+            f.write(' * Itens refentes a montagem ' + itens.split('  -  ')[0].split('.')[1] + '\n \n')
+            f.write(itens + '\n')
+            
+        else:
+            f.write(itens + '\n')
+        
+    f.close()
+
+def getFolders(caminho):
+    try:
+        if os.path.exists(caminho):
+            pastas = [f for f in os.listdir(caminho) if os.path.isdir(os.path.join(caminho, f))]
+            return pastas
+        else:
+            print("O caminho especificado não existe.")
+            return None
+    except Exception as e:
+        print(f"Ocorreu um erro: {e}")
+        return None
+    
+print(' ▄▄        ▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄       ▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄            ▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄  ▄         ▄ ')
+print('▐░░▌      ▐░▌▐░░░░░░░░░░░▌▐░░▌     ▐░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌          ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌')
+print('▐░▌░▌     ▐░▌▐░█▀▀▀▀▀▀▀█░▌▐░▌░▌   ▐░▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌           ▀▀▀▀█░█▀▀▀▀ ▐░█▀▀▀▀▀▀▀▀▀ ▐░▌       ▐░▌')
+print('▐░▌▐░▌    ▐░▌▐░▌       ▐░▌▐░▌▐░▌ ▐░▌▐░▌▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌          ▐░▌       ▐░▌')
+print('▐░▌ ▐░▌   ▐░▌▐░▌       ▐░▌▐░▌ ▐░▐░▌ ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░▌          ▐░▌               ▐░▌     ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄█░▌')
+print('▐░▌  ▐░▌  ▐░▌▐░▌       ▐░▌▐░▌  ▐░▌  ▐░▌▐░░░░░░░░░░░▌▐░▌          ▐░▌               ▐░▌     ▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌')
+print('▐░▌   ▐░▌ ▐░▌▐░▌       ▐░▌▐░▌   ▀   ▐░▌▐░█▀▀▀▀▀▀▀▀▀ ▐░▌          ▐░▌               ▐░▌     ▐░█▀▀▀▀▀▀▀▀▀  ▀▀▀▀█░█▀▀▀▀ ')
+print('▐░▌    ▐░▌▐░▌▐░▌       ▐░▌▐░▌       ▐░▌▐░▌          ▐░▌          ▐░▌               ▐░▌     ▐░▌               ▐░▌     ')
+print('▐░▌     ▐░▐░▌▐░█▄▄▄▄▄▄▄█░▌▐░▌       ▐░▌▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄ ▐░█▄▄▄▄▄▄▄▄▄  ▄▄▄▄█░█▄▄▄▄ ▐░▌               ▐░▌     ')
+print('▐░▌      ▐░░▌▐░░░░░░░░░░░▌▐░▌       ▐░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░░░░░░░░░░░▌▐░▌               ▐░▌     ')
+print(' ▀        ▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀         ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀                 ▀      ')
+print("\n Criado por: Gabriel Palmieri \n \n")                                                                                                 
+
+print("\nIMPORTANTE! => A PRIMEIRA PASTA PRECISA ESTAR DE ACORDO COM SINTAXE SUGERIDA: (NOMEDAEMPRESA_PRIMEIRONOME_SEGUNDONOME) \n NÃO COLOQUE ESPAÇO \n\n")
+caminho = input('[CAMINHO] =>  INFORME O CAMINHO DA PASTA: \nR:') 
+
+pastas = getFolders(caminho)
+
+for pasta in pastas:
+    caminho_completo = os.path.join(caminho, pasta)
+    itens = getItens(caminho_completo)
+
+if pastas is not None:
+    print("")
+    print(f"As pastas em {caminho} são: {pastas}")
+    print("")
+
+response = input('[INFO] => Pressione qualquer tecla para continuar.')
+
+count = "01"    
+
+print("##############################################################")
+print('')
+print(' * Itens refentes a montagem 01' )
+print('')
+
+for itens in mont_size:
+    if (itens.split('  -  ')[0].split('.')[1] != count):
+        count = str(int(count) + 1).zfill(2)
+        print('')
+        print(' * Itens refentes a montagem ' + itens.split('  -  ')[0].split('.')[1])
+        print('')
+        print(itens)
+    else:
+        print(itens)
+
+print("############################################################## \n \n")
+
+response = input("[INFO] => Deseja salvar em um arquivo txt? (Sim ou Nao) \nR:")
+
+if response == "Sim":
+    NDN = input("Digite o nome do arquivo... (NÃO COLOCAR FORMATOS COMO .TXT) \nR:")
+    save_file(NDN, mont_size)
+    print("\n [SUCESSO] => O Arquivo foi criado com sucesso. \n")
+else:
+    print("\n [CONCLUIDO] => Programa encerrado. \n")
+
+nd = input("[CONCLUIDO] => Aperte qualquer tecla para fechar.")
+    

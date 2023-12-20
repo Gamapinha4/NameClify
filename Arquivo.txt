@@ -1,0 +1,35 @@
+Esse arquivo foi criado usando o NOMECLIFY! 
+ Criado por: Gabriel Palmieri 
+ 
+ 
+ 
+ * Itens refentes a pasta: 01 
+ 
+SC.01.01.01  -  Peça esqueleto inferior - Copia (2).txt
+
+SC.01.01.02  -  Peça esqueleto inferior - Copia (3).txt
+
+SC.01.01.03  -  Peça esqueleto inferior - Copia (4).txt
+
+SC.01.01.04  -  Peça esqueleto inferior - Copia.txt
+
+SC.01.01.05  -  Peça esqueleto inferior.txt
+
+
+ 
+ * Itens refentes a pasta: 02
+ 
+SC.02.01.01  -  Peça esqueleto superior - Copia (2).txt
+
+SC.02.01.02  -  Peça esqueleto superior - Copia (3).txt
+
+SC.02.01.03  -  Peça esqueleto superior - Copia (4).txt
+
+SC.02.01.04  -  Peça esqueleto superior - Copia (5).txt
+
+SC.02.01.05  -  Peça esqueleto superior - Copia (6).txt
+
+SC.02.01.06  -  Peça esqueleto superior - Copia.txt
+
+SC.02.01.07  -  Peça esqueleto superior.txt
+
