@@ -2,7 +2,10 @@
 
 ## Projeto para geração de nomenclatura para organização de arquivos.
 
-* Python
+Programa feito em:
+<img align="center" alt="Js" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">
 
-Como usar: https://bit.ly/sistema-arqv-meca
-Deixa uma estrela para ajudar...⭐
+# Como usar: 
+  https://bit.ly/sistema-arqv-meca
+  
+<br>Deixa uma estrela para ajudar...⭐</br>
