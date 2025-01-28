@@ -1,6 +1,4 @@
-# Sistema para Organização de Arquivos
-### Apresentação do Projeto 📄
-NameClify é uma aplicação desenvolvida para ser um sistema para nomear e organizar corretamente arquivos e pastas
+NameClify é uma aplicação desenvolvida com o objetivo de ajudar usuários a nomear e organizar arquivos e pastas de maneira eficiente e padronizada. Com uma interface intuitiva, a ferramenta permite que você crie nomes consistentes para arquivos e pastas, otimize a estrutura de diretórios e facilite a busca e o gerenciamento de arquivos. Ideal para quem lida com grandes volumes de dados e precisa garantir que tudo esteja bem organizado e acessível.
 
 ## Linguagens Utilizadas 💻
 <img src="https://camo.githubusercontent.com/3c55df0eaf0804dba65a57bfd09fd26419a1bec537962d966ace4e4959b51f5a/687474703a2f2f466f7254686542616467652e636f6d2f696d616765732f6261646765732f6d6164652d776974682d707974686f6e2e737667"/>
